@@ -82,4 +82,10 @@ after testing approximately $2.0 \times 10^{11}$ candidates.  The source code is
 
 after testing approximately $1.4 \times 10^{11}$ candidates in 45 minutes on an RTX 6000 GPU.  The source code is available [here](https://github.com/alexamclain/Danger2026DataChallenge/blob/main/research/p26/README.md).
 
-Can you find a Pomerance triple for $p=10^{27}+103$?
+**August 28, 2026**: In collaboration with Claude Fable 5, [Adam Khakhar](http://adamkhakhar.github.io/) found the Pomerance triple
+
+- $(10^{27}+103, 792266506864025595923438866, 484583117575631730716207764)$
+
+after testing approximately $1.4 \times 10^{12}$ conditioned curves in 52 minutes on 16 RTX 5090 GPUs.  Each curve is sampled to carry twice the ordinary hit probability and is counted once rather than twice, so this corresponds to roughly $5.6 \times 10^{12}$ candidates in the units of the entries above.  The search adds three exact layers to the record stack: deduplicating the two reciprocal marked points of each curve (they differ by the rational $2$-torsion translate $x\mapsto 1/x$, which preserves halving depth), sampling the X$_1(16)$ parameter by walking the genus-one curve $W^2=X^3-X$ so that the first halving gate is satisfied by construction (via the identity $D\cdot H = y(y-1)(y-2)\cdot G^2$ with $G=(y^2-2)(y^2-2y+2)$), and predicting the next gate's character from $\chi(d_{\text{next}}) = \chi(B)\chi(2)\chi(P)$ before its square root is computed.  The source code is available [here](https://github.com/adamkhakhar/pomerance-triple-search), along with the certificate and a Lean 4 proof.
+
+Can you find a Pomerance triple for $p=10^{28}+331$?
